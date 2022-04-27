@@ -10,33 +10,46 @@
             display: flex;
             width: 100%;
             justify-content: space-between;
+            align-items: center;
+
         }
         .usernav{
             display: flex;
             width: 25%;
             justify-content: space-evenly;
             gap: 5%;
-            border: 1px solid black;
             background-color: black;
             align-items: center;
 
         }
-        .usernav>div:nth-child(4){
-           width: 30%;
-           background-color: #1bb76e;
-           text-align: center;
+        .usernav button{
+            height: 35px;
+        font-size: 15px;
+        border-radius: 4px;
         }
-        .usernav>div:nth-child(2){
-         
-           width: 30%;
-           background-color: blue;
-           text-align: center;
+        
+        .usernav>div:nth-child(2)>button{
+            height: 35px;
+            background-color:blue;
+            border: transparent;
+
         }
-        .usernav>div:nth-child(3){
-         
-         width: 30%;
- 
-      }
+        .usernav>div:nth-child(4)>button{
+            height: 35px;
+            background-color:#1bb76e;
+            border: transparent;
+
+        }
+        .usernav>div:nth-child(3)>button{
+            height: 35px;
+            background-color: transparent;
+            border: transparent;
+            color: white;
+        }
+        .lastbutton{
+            width: 120px;
+        }
+
         .navlogo{
             display: flex;
             width: 16%;
@@ -59,7 +72,28 @@
         }
         .navsearch{
             width: 30%;
-            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(81,80,115);
+             height:35px;
+          padding-right: 10px;
+          
+        }
+        .navsearch>input{
+            width: 90%;
+            outline: none;
+            background-color: rgb(81,80,115);
+            color: white;
+            border: none;
+        }
+        .navsearch>input::placeholder{
+            color: white;
+            padding-left:20px;
+        }
+        .navsearch>img
+        {
+            height: 25px;
+            margin-top: 1%;
         }
     </style>
 </head>
@@ -78,7 +112,7 @@
             
             
             <div class="navsearch">
-                <input type="text">
+                <input placeholder="images,#tags,@users oh my!" type="text">
                 <img class="search" src="https://s.imgur.com/desktop-assets/desktop-assets/icon-search.8d0f9b564a4659d48d8eca38b968a7f2.svg">
             </div>
 
@@ -87,13 +121,13 @@
                     <svg width="32" height="32" viewBox="0 -2 34 34" class="uScaleTransition ProfileNavbar-item" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Comment Leaderboard</title><g fill="none" fill-rule="evenodd"><path d="M0 0h32v32H0z"></path><g transform="translate(6.5 3)" stroke="#ffffff" stroke-width="2"><path d="M4 16.977v7.076l5.5-2.481 5.5 2.481v-7.076l-5.5 1.245L4 16.977z"></path><circle cx="9.5" cy="9.5" r="8.5"></circle></g></g></svg>
                 </div>
                 <div>
-                  <p>Go-Add_Free</p>  
+                 <button>Go-Add_Free</button>
                 </div>
                 <div>
-                   <p>Sign in</p> 
+                   <button>Sign in</button> 
                 </div>
                 <div>
-                    <p>Sign Up</p>
+                   <button class="lastbutton">Sign Up</button>
                 </div>
             </div>
         </nav>
