@@ -421,13 +421,15 @@
 
 
 <script>
+    var page=1;
+    limit=40;
 var count=1
 var gridtemplaterows=""
 var start=0;
 var end=2;
 async function generatecontent()
 {
-const promise=await  fetch("https://pixabay.com/api/?key=27056281-2db7f0833202d09c5d077a8d1&&page=4&&per_page=40")
+const promise=await  fetch(`https://pixabay.com/api/?key=27056281-2db7f0833202d09c5d077a8d1&&page=${page}&&per_page=${limit}`)
 
 const data=await promise.json()
 console.log(data,"data")
@@ -500,6 +502,19 @@ console.log(gridtemplaterows,"e")
 
 generatecontent()
 
+window.addEventListener('scroll',() =>{
 
+const {scrollHeight,scrollTop,clientHeight} =document.documentElement;
+
+if(scrollTop+clientHeight>=scrollHeight)
+{
+    page++
+    // limit=limit*page
+
+    generatecontent()
+}
+
+
+})
 
 </script>
